@@ -34,8 +34,10 @@ URLS=(
   ["superuser"]="http://superuser.com/search?q="
   ["askubuntu"]="http://askubuntu.com/search?q="
   ["imdb"]="http://www.imdb.com/find?ref_=nv_sr_fn&q="
+  ["rottentomatoes"]="https://www.rottentomatoes.com/search/?search="
   ["piratebay"]="https://thepiratebay.org/search/"
   ["youtube"]="https://www.youtube.com/results?search_query="
+  ["vimawesome"]="http://vimawesome.com/?q="
 )
 
 # List for rofi
