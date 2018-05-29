@@ -1,6 +1,6 @@
 # rofi-scripts
 
-##### A collection of script for [rofi](https://davedavenport.github.io/rofi/)
+##### A collection of scripts for [rofi](https://davedavenport.github.io/rofi/)
 
 ## web-search.sh
 Search the web with rofi by selecting a website and providing a query.
@@ -15,7 +15,7 @@ Search your book collection with rofi.
 
 The MIT License (MIT)
 
-Copyright (c) 2017 Miroslav Vidović
+Copyright (c) 2018 Miroslav Vidović
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
