@@ -11,10 +11,10 @@
 # Requirements:
 #   rofi, git
 # Description:
-#   Display all repositories connected with a GitHub user account in rofi and 
+#   Display all repositories connected with a GitHub user account in rofi and
 #   clone the selected repository.
 # Usage:
-#   github-repos.sh 
+#   github-repos.sh
 # -----------------------------------------------------------------------------
 # Script:
 
@@ -38,13 +38,13 @@ clone_repository(){
 # the repository name from the output with sed substitution
 all_my_repositories_short_name(){
   curl -s "https://api.github.com/users/$USER/repos?per_page=1000" | grep -o 'git@[^"]*' |\
-    sed "s/git@github.com:$USER\///g" 
+    sed "s/git@github.com:$USER\///g"
 }
 
-# Rofi dmenu 
+# Rofi dmenu
 rofi_dmenu(){
-  rofi -dmenu -fuzzy -only-match -location 0 -p "Select a repository > "\
-    -bg "#F8F8FF" -fg "#000000" -hlbg "#ECECEC" -hlfg "#0366d6"
+  rofi -dmenu -matching fuzzy -only-match -p "Select a repository > "\
+    -location 0 -bg "#F8F8FF" -fg "#000000" -hlbg "#ECECEC" -hlfg "#0366d6"
 }
 
 main(){

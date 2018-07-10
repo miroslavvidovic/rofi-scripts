@@ -11,7 +11,7 @@
 # Requirements:
 #   rofi
 # Description:
-#   Use rofi to search my books. 
+#   Use rofi to search my books.
 # Usage:
 #   books-search.sh
 # -----------------------------------------------------------------------------
@@ -27,7 +27,7 @@ readarray -t F_ARRAY <<< "$(find "$BOOKS_DIR" -type f -name '*.pdf')"
 # key => book name
 # value => absolute path to the file
 # BOOKS['filename']='path'
-declare -A BOOKS 
+declare -A BOOKS
 
 # Add elements to BOOKS array
 get_books() {
@@ -49,10 +49,10 @@ gen_list(){
 
 main() {
   get_books
-  book=$( (gen_list) | rofi -dmenu -i -fuzzy -only-match -location 0 -p "Book > " )
+  book=$( (gen_list) | rofi -dmenu -i -matching fuzzy -only-match -location 0 -p "Book > " )
   xdg-open "${BOOKS[$book]}"
 }
 
-main 
+main
 
 exit 0
