@@ -43,7 +43,7 @@ all_my_repositories_short_name(){
 
 # Rofi dmenu
 rofi_dmenu(){
-  rofi -dmenu -matching fuzzy -only-match -p "Select a repository > "\
+  rofi -dmenu -matching fuzzy -no-custom -p "Select a repository > "\
     -location 0 -bg "#F8F8FF" -fg "#000000" -hlbg "#ECECEC" -hlfg "#0366d6"
 }
 
