@@ -50,14 +50,20 @@ gen_list() {
 
 main() {
   # Pass the list to rofi
-  platform=$( (gen_list) | rofi -dmenu -matching fuzzy -only-match -location 0 -p "Search > " )
+  platform=$( (gen_list) | rofi -dmenu -matching fuzzy -no-custom -location 0 -p "Search > " )
 
-  query=$( (echo ) | rofi  -dmenu -matching fuzzy -location 0 -p "Query > " )
-  if [[ -n "$query" ]]; then
-    url=${URLS[$platform]}$query
-    xdg-open "$url"
+  if [[ -n "$platform" ]]; then
+    query=$( (echo ) | rofi  -dmenu -matching fuzzy -location 0 -p "Query > " )
+
+    if [[ -n "$query" ]]; then
+      url=${URLS[$platform]}$query
+      xdg-open "$url"
+    else
+      exit
+    fi
+
   else
-    rofi -show -e "No query provided."
+    exit
   fi
 }
 
