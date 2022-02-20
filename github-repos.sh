@@ -19,7 +19,11 @@
 # Script:
 
 # GitHub username
-USER="miroslavvidovic"
+USER=$(rofi -dmenu -p "Enter a Username > ")
+
+# These two lines will make sure the username is not empty
+echo "ERROR: You need to enter the Github username"
+[[ -z "$USER" ]] && exit
 
 # GitHub user account URL
 URL="https://github.com/$USER/"
