@@ -61,7 +61,7 @@ gen_list(){
 
 main() {
   get_books
-  book=$( (gen_list) | rofi -dmenu -i -matching fuzzy -no-custom -location 0 -p "Book > " )
+  book=$( (gen_list) | rofi -dmenu -i -matching glob -no-custom -location 0 -p "Book > " )
 
   if [ -n "$book" ]; then
     xdg-open "${BOOKS[$book]}"
